@@ -47,5 +47,12 @@ img {
 }
 
 #coluna {
-    margin-top: 60px;
+    margin-top: 40px;
+}
+
+.desafio_aprender {
+    text-align: center;
+    margin: 20px;
+    width: 90%;
+    max-width: 600px;
 }
