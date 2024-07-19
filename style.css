@@ -56,3 +56,7 @@ img {
     width: 90%;
     max-width: 600px;
 }
+
+.desafio_aprender p {
+    text-align: justify;
+}
