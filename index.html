@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <nav class="navbar" id="navbar">
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="mailto:email@example.com"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://github.com" target="_blank"><i class="fas fa-project-diagram"></i> Projetos</a>
+    </nav>
+
     <div class="header">
         <div id="title">
             <h3>Victor Melo</h3>
@@ -29,16 +38,43 @@
     </div>
 
     <div class="desafio_aprender">
-        <h4>Desafio mundo dos bancários</h4>
-        <p>
-            Ser bancário traz conosco um conjunto único de desafios. Gerenciar carteira de clientes requer excelentes habilidades de comunicação e paciência. A necessidade constante de se manter atualizado com regulamentações e políticas financeiras pode ser exigente. Equilibrar a satisfação do cliente com as metas propostas e superar limites alcançados, frequentemente coloca os banqueiros em posições de muito foco e disciplina. Situações de alto estresse, como lidar com grandes transações, resolver problemas de clientes na mesa em poucos minutos por conta do alto fluxo na agência e atingir metas de vendas, exigem resiliência e precisão. Apesar desses obstáculos, a função é gratificante, pois oferece a chance de construir relacionamentos fortes com os clientes e ajudar as pessoas.</p>
+        <h4 onclick="toggleParagraph('bancarioPara')">Desafio mundo dos bancários</h4>
+        <p id="bancarioPara" class="hidden">
+            Ser bancário traz conosco um conjunto único de desafios. Gerenciar carteira de clientes requer excelentes habilidades de comunicação e paciência. A necessidade constante de se manter atualizado com regulamentações e políticas financeiras pode ser exigente. Equilibrar a satisfação do cliente com as metas propostas e superar limites alcançados, frequentemente coloca os banqueiros em posições de muito foco e disciplina. Situações de alto estresse, como lidar com grandes transações, resolver problemas de clientes na mesa em poucos minutos por conta do alto fluxo na agência e atingir metas de vendas, exigem resiliência e precisão. Apesar desses obstáculos, a função é gratificante, pois oferece a chance de construir relacionamentos fortes com os clientes e ajudar as pessoas.
+        </p>
     </div>
     <div>
         <img src="/assets/destaque.jpeg" alt="destaque">
     </div>
     <div class="desafio_aprender">
-        <h4>Aprender e se destacar</h4>
-        <p>Sou apaixonado por aprender e me destacar em tudo o que faço. Tenho uma abordagem focada em superar desafios pessoais e crescer constantemente. Além de buscar o melhor para mim, também busco ajudar os outros, especialmente em situações complexas e dúvidas que possam surgir durante o trabalho. Acredito que compartilhar conhecimento e oferecer suporte é essencial para o sucesso coletivo e para um ambiente mais colaborativo para todos. Estou sempre pronto para enfrentar novos desafios.</p>
+        <h4 onclick="toggleParagraph('aprenderPara')">Aprender e se destacar</h4>
+        <p id="aprenderPara" class="hidden">
+            Sou apaixonado por aprender e me destacar em tudo o que faço. Tenho uma abordagem focada em superar desafios pessoais e crescer constantemente. Além de buscar o melhor para mim, também busco ajudar os outros, especialmente em situações complexas e dúvidas que possam surgir durante o trabalho. Acredito que compartilhar conhecimento e oferecer suporte é essencial para o sucesso coletivo e para um ambiente mais colaborativo para todos. Estou sempre pronto para enfrentar novos desafios.
+        </p>
     </div>
+
+    <script>
+        function toggleParagraph(id) {
+            var para = document.getElementById(id);
+            if (para.style.display === "none" || para.style.display === "") {
+                para.style.display = "block";
+            } else {
+                para.style.display = "none";
+            }
+        }
+
+        // Navbar hide/show on scroll
+        let lastScrollTop = 0;
+        window.addEventListener("scroll", function() {
+            let navbar = document.getElementById("navbar");
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                navbar.style.top = "-90px"; // Adjust to hide the navbar
+            } else {
+                navbar.style.top = "0";
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
 </body>
 </html>
