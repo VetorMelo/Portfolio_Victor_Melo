@@ -9,11 +9,18 @@
 </head>
 <body>
     <nav class="navbar" id="navbar">
-        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="mailto:email@example.com"><i class="fas fa-envelope"></i> Email</a>
-        <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a href="https://github.com" target="_blank"><i class="fas fa-project-diagram"></i> Projetos</a>
+        <div class="nav-container">
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:email@example.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://github.com" target="_blank"><i class="fas fa-project-diagram"></i> Projetos</a>
+            </div>
+        </div>
     </nav>
 
     <div class="header">
@@ -75,6 +82,16 @@
             }
             lastScrollTop = scrollTop;
         });
+
+        // Toggle menu for mobile view
+        function toggleMenu() {
+            var x = document.getElementById("navLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
     </script>
 </body>
 </html>
