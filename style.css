@@ -10,7 +10,7 @@ body {
 
 .navbar {
     width: 100%;
-    background-color: #333;
+    background-color: #d3d3d3; /* Light gray background color */
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -20,6 +20,7 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     transition: top 0.3s;
+    font-weight: bold; /* Bold font */
 }
 
 .navbar a {
@@ -27,7 +28,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    color: #f2f2f2;
+    color: #333;
     font-size: 17px;
 }
 
@@ -42,7 +43,7 @@ body {
 
 .header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     width: 90%;
     max-width: 600px;
@@ -60,7 +61,6 @@ body {
     display: flex;
     align-items: center;
     font-size: 40px;
-    margin-top: 20px;
 }
 
 h1, h5, p {
@@ -98,10 +98,25 @@ img {
 }
 
 /* Media Queries para tornar o layout responsivo */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: row;
+    }
+
+    #title {
+        font-size: 24px;
+    }
+
+    #avatar img {
+        width: 2cm;
+        height: 2.5cm;
+        margin-left: 10px;
+    }
+}
+
 @media (min-width: 600px) {
     .header {
         flex-direction: row;
-        justify-content: space-between;
     }
     
     #avatar img {
